@@ -9,6 +9,8 @@ import (
 var db *gorm.DB
 
 type Book struct {
+	gorm.Model
+	ID          uint
 	Name        string `json:"name"`
 	Author      string `json:"author"`
 	Publication string `json:"publication"`
@@ -23,4 +25,5 @@ func init() {
 func (b *Book) CreateBook() *Book {
 	db.Create(b)
 	db.Create(&b)
+	return b
 }
