@@ -44,7 +44,7 @@ func main() {
 		defer f.Close()
 		if err != nil {
 			log.Fatal(err)
-			w.Write([]byte("500 internal server error : reading a image error"))
+			w.Write([]byte("500 internal server error : reading image error"))
 			return
 		}
 		bufferData := bytes.NewBuffer(nil)
